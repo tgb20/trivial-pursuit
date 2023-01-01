@@ -27,7 +27,7 @@ export default function Home() {
 
   async function getEntertainmentQuestion() {
     setShowAnswer(false)
-    let response = await fetch(`https://the-trivia-api.com/api/questions?categories=film_and_tv,society_and_culture&limit=1&difficulty=${difficulty}`)
+    let response = await fetch(`https://the-trivia-api.com/api/questions?categories=film_and_tv,music&limit=1&difficulty=${difficulty}`)
     let json = await response.json()
     setQuestion(json[0])
     let rawA = json[0].incorrectAnswers
@@ -37,7 +37,7 @@ export default function Home() {
 
   async function getHistoryQuestion() {
     setShowAnswer(false)
-    let response = await fetch(`https://the-trivia-api.com/api/questions?categories=history,general_knowledge&limit=1&difficulty=${difficulty}`)
+    let response = await fetch(`https://the-trivia-api.com/api/questions?categories=history&limit=1&difficulty=${difficulty}`)
     let json = await response.json()
     setQuestion(json[0])
     let rawA = json[0].incorrectAnswers
@@ -47,7 +47,7 @@ export default function Home() {
 
   async function getArtsQuestion() {
     setShowAnswer(false)
-    let response = await fetch(`https://the-trivia-api.com/api/questions?categories=arts_and_literature,music&limit=1&difficulty=${difficulty}`)
+    let response = await fetch(`https://the-trivia-api.com/api/questions?categories=arts_and_literature,society_and_culture&limit=1&difficulty=${difficulty}`)
     let json = await response.json()
     setQuestion(json[0])
     let rawA = json[0].incorrectAnswers
@@ -57,7 +57,7 @@ export default function Home() {
 
   async function getScienceQuestion() {
     setShowAnswer(false)
-    let response = await fetch(`https://the-trivia-api.com/api/questions?categories=science&limit=1&difficulty=${difficulty}`)
+    let response = await fetch(`https://the-trivia-api.com/api/questions?categories=science,food_and_drink&limit=1&difficulty=${difficulty}`)
     let json = await response.json()
     setQuestion(json[0])
     let rawA = json[0].incorrectAnswers
@@ -67,7 +67,7 @@ export default function Home() {
 
   async function getSportsQuestion() {
     setShowAnswer(false)
-    let response = await fetch(`https://the-trivia-api.com/api/questions?categories=sport_and_leisure,food_and_drink&limit=1&difficulty=${difficulty}`)
+    let response = await fetch(`https://the-trivia-api.com/api/questions?categories=sport_and_leisure&limit=1&difficulty=${difficulty}`)
     let json = await response.json()
     setQuestion(json[0])
     let rawA = json[0].incorrectAnswers
@@ -109,7 +109,7 @@ export default function Home() {
                 <Button onClick={getGeographyQuestion} colorScheme='blue' leftIcon={<FaMapSigns />}>Geography</Button>
                 <Button onClick={getEntertainmentQuestion} colorScheme='pink' leftIcon={<GiPopcorn />}>Entertainment</Button>
                 <Button onClick={getHistoryQuestion} colorScheme='yellow' leftIcon={<GiDinosaurBones />}>History</Button>
-                <Button onClick={getArtsQuestion} colorScheme='purple' leftIcon={<FaPaintBrush />}>Art & Literature</Button>
+                <Button onClick={getArtsQuestion} bgColor='yellow.700' color='white' leftIcon={<FaPaintBrush />}>Art & Literature</Button>
                 <Button onClick={getScienceQuestion} colorScheme='green' leftIcon={<FaLeaf />}>Science & Nature</Button>
                 <Button onClick={getSportsQuestion} colorScheme='orange' leftIcon={<FaFootballBall />}>Sport & Leisure</Button>
               </Stack>
